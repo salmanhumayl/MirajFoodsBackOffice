@@ -1,0 +1,31 @@
+
+
+
+    <div class='main-nav'>
+      <div class='navbar navbar-inverse'>
+          <div class='navbar-header'>
+              <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbarcollapse'>
+                  <<span class='sr-only'>Toggle navigation</span>
+                  <span class='icon-bar'></span>
+                  <span class='icon-bar'></span>
+                  <span class='icon-bar'></span>>
+              </button>
+              <a class='navbar-brand' [routerLink]="['/dashboard']">Miraj Foods Dashboard</a>
+          </div>
+
+          <div class='collapse navbar-collapse' id="navbarcollapse">
+              <ul class='nav navbar-nav'>
+
+
+                  <li [routerLinkActive]="['link-active']">
+                      <a >
+                          <span class='glyphicon glyphicon-th-list'></span> Reports
+                      </a>
+                  </li>
+
+              </ul>
+          </div>
+      </div>
+  </div>
+
+

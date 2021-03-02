@@ -1,16 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { dashboardComponent } from './components/dashboard/dashboard.component';
+import { NavmenuComponent } from './components/navmenu/navmenu.component';
+import { OrderlistComponent } from './components/orderlist/orderlist.component';
+import { VieworderComponent } from './components/vieworder/vieworder.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    dashboardComponent,
+    NavmenuComponent,
+    OrderlistComponent,
+    VieworderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
