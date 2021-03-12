@@ -22,10 +22,11 @@
                     <div class="col invoice-to">
                         <div class="text-gray-light">INVOICE TO :</div>
                         <h4 class="to">{{orderdetails[0].CustomerFirstName + ' ' + orderdetails[0].CustomerLastName}} </h4>
-
-                        <div class="email">{{orderdetails[0].ContactNumber}}</div>
                         <div class="address">{{orderdetails[0].DeliveryAddress}}</div>
+                        <div class="address">{{orderdetails[0].DeliveryAddress1}}</div>
                         <div class="address">{{orderdetails[0].AreaDescription}}</div>
+                        <div class="email">{{orderdetails[0].PostalCode}}</div>
+                        <div class="email">{{orderdetails[0].ContactNumber}}</div>
                     </div>
                     <div class="col invoice-details">
                         <h4 class="invoice-id">INVOICE # {{orderdetails[0].OrderNumber}}</h4>
