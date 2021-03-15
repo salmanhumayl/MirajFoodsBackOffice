@@ -73,6 +73,11 @@
                             <td>{{orderdetails[0].ShipingCharges | number:'1.2-2' |currency:'CAD' }} </td>
                         </tr>
                         <tr>
+                          <td colspan="2"></td>
+                          <td colspan="2">HST 13%</td>
+                          <td>{{orderdetails[0].TaxAmount | number:'1.2-2' |currency:'CAD' }} </td>
+                      </tr>
+                        <tr>
                             <td colspan="2"></td>
                             <td colspan="2" >Grand Total</td>
                             <td>{{GrandTotal | number:'1.2-2' |currency:'CAD' }}</td>

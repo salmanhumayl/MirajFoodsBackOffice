@@ -29,7 +29,7 @@ export class OrderlistComponent implements OnInit {
 
         (data)=>{
           this.orderdetails=data;
-          console.log(this.orderdetails)
+          //console.log(this.orderdetails)
       },
       error => {
                  alert(error);
