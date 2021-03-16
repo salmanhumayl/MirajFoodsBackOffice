@@ -15,6 +15,7 @@
                       <th>Date</th>
                       <th>Contact # </th>
                       <th>Status</th>
+                      <th>Remarks</th>
                       <th>Total</th>
                       <th>Action</th>
                   </tr>
@@ -42,6 +43,9 @@
 
                       <td>
                         <b>{{detail.StatusDescription}}</b>
+                      </td>
+                      <td>
+                        {{detail.Remarks}}
                       </td>
                       <td>
                           {{detail.Total + detail.ShipingCharges + detail.TaxAmount | number:'1.2-2' |currency:'CAD'}}
