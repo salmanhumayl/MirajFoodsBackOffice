@@ -7,12 +7,14 @@ import {OrderlistComponent} from 'src/app/components/orderlist/orderlist.compone
 import {dashboardComponent} from 'src/app/components/dashboard/dashboard.component';
 import {VieworderComponent} from 'src/app/components/vieworder/vieworder.component'
 import { LoginComponent } from './components/login/login.component';
+import { ItemsComponent } from './components/items/items.component';
 
 const routes: Routes = [
   {path:'dashboard',component:dashboardComponent,canActivate:[AuthGuardService]},
   {path:'orders',component:OrderlistComponent,canActivate:[AuthGuardService]},
   {path:'ViewOrder/:id',component:VieworderComponent,canActivate:[AuthGuardService]},
   {path:'login',component:LoginComponent},
+  {path:'items',component:ItemsComponent},
   {path:'',redirectTo:'/login',pathMatch:'full'}
 
 ];

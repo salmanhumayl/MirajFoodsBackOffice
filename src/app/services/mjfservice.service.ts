@@ -6,7 +6,7 @@ import { Observable, Subject, throwError } from 'rxjs';
 
 import { OrderDetail } from 'src/app/models/OrderDetail';
 import {Updateorderstatus} from 'src/app/models/Updateorderstatus'
-
+import {Product} from 'src/app/models/Products';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +39,7 @@ export class MjfserviceService {
   );
  }
 
+
  UpdateOrderStatus (OrderStatus:Updateorderstatus) :Observable<boolean>  {
 
   return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/ChangeOrderStatus",OrderStatus)
@@ -46,5 +47,16 @@ export class MjfserviceService {
     catchError(this.handleError)
 );
 }
+
+getItems():Observable<Product[]>
+{
+
+   return this._http.get<Product[]>("http://eservices.mirajfoods.ca/api/item")
+  .pipe(
+    catchError(this.handleError)
+);
+}
+
+
 
 }

@@ -1,0 +1,56 @@
+<br>
+<p>
+    <!--<button (click)="AddUserRole()" class="btn btn-primary"> Add User In Role <i class="glyphicon glyphicon-record"></i></button>-->
+
+    <a  class="btn btn-primary">Add Item</a>
+</p>
+
+
+<div class="ui inverted dimmer" [class.active]='loading'>
+    <div class="ui text loader">Loading</div>
+  </div>
+
+<div>
+    <p>
+        <input type="text" [(ngModel)]="searchterm" placeholder="Search By Name" class="form-control" />
+
+    </p>
+</div>
+<br />
+
+
+<table class='table table-bordered table-hover table-striped' *ngIf="productitems">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>UOM</th>
+            <th>Size</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--<tr *ngFor="let UserRole of UserRoles | slice:startIndex:endIndex">-->
+        <tr *ngFor="let items of productitems">
+            <td>
+                <a>
+                    {{ items.item_description}}
+                </a>
+            </td>
+            <td>
+                {{items.item_price}}
+            </td>
+            <td>
+              {{items.item_uom}}
+          </td>
+          <td>
+            {{items.item_size}}
+        </td>
+            <td>
+                <a class="btn btn-primary">Edit</a>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+

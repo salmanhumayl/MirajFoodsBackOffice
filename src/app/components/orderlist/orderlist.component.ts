@@ -16,6 +16,8 @@ export class OrderlistComponent implements OnInit {
   Message:string;
   Status:number
   OrderStatus:Updateorderstatus=new Updateorderstatus();
+  loading:boolean=true;
+
   constructor(private _MJFService:MjfserviceService) { }
 
   ngOnInit(): void {
@@ -26,15 +28,17 @@ export class OrderlistComponent implements OnInit {
   {
 
          this._MJFService.getOrders().subscribe(
-
-        (data)=>{
-          this.orderdetails=data;
-          //console.log(this.orderdetails)
-      },
-      error => {
-                 alert(error);
-
-               }
+        {
+          next:(data)=>{
+             this.orderdetails=data;
+          },
+          complete:()=>{
+            this.loading=false;
+          },
+           error:() => {
+            alert("error");
+             }
+        }
       );
 
 
