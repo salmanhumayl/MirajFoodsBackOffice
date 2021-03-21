@@ -10,6 +10,8 @@ import { OrderlistComponent } from './components/orderlist/orderlist.component';
 import { VieworderComponent } from './components/vieworder/vieworder.component';
 import { LoginComponent } from './components/login/login.component';
 import { ItemsComponent } from './components/items/items.component';
+import { AdditemComponent } from './components/items/additem/additem.component';
+import { EdititemComponent } from './components/items/edititem/edititem.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ItemsComponent } from './components/items/items.component';
     OrderlistComponent,
     VieworderComponent,
     LoginComponent,
-    ItemsComponent
+    ItemsComponent,
+    AdditemComponent,
+    EdititemComponent
   ],
   imports: [
     BrowserModule,

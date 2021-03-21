@@ -2,7 +2,7 @@
 <p>
     <!--<button (click)="AddUserRole()" class="btn btn-primary"> Add User In Role <i class="glyphicon glyphicon-record"></i></button>-->
 
-    <a  class="btn btn-primary">Add Item</a>
+    <a [routerLink]="['/additems']" class="btn btn-primary">ADD ITEM</a>
 </p>
 
 
@@ -10,12 +10,12 @@
     <div class="ui text loader">Loading</div>
   </div>
 
-<div>
+<!-- <div>
     <p>
         <input type="text" [(ngModel)]="searchterm" placeholder="Search By Name" class="form-control" />
 
     </p>
-</div>
+</div> -->
 <br />
 
 
@@ -47,7 +47,7 @@
             {{items.item_size}}
         </td>
             <td>
-                <a class="btn btn-primary">Edit</a>
+                <a [routerLink]="['/edititems',items.item_id]" class="btn btn-primary">Edit</a>
 
             </td>
         </tr>
