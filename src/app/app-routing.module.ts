@@ -16,9 +16,9 @@ const routes: Routes = [
   {path:'orders',component:OrderlistComponent,canActivate:[AuthGuardService]},
   {path:'ViewOrder/:id',component:VieworderComponent,canActivate:[AuthGuardService]},
   {path:'login',component:LoginComponent},
-  {path:'items',component:ItemsComponent},
-  {path:'additems',component:AdditemComponent},
-  {path:'edititems/:id',component:EdititemComponent},
+  {path:'items',component:ItemsComponent,canActivate:[AuthGuardService]},
+  {path:'additems',component:AdditemComponent,canActivate:[AuthGuardService]},
+  {path:'edititems/:id',component:EdititemComponent,canActivate:[AuthGuardService]},
   {path:'',redirectTo:'/login',pathMatch:'full'}
 
 ];

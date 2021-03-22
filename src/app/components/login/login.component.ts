@@ -3,6 +3,7 @@ import { Route, Router } from '@angular/router';
 import {NgForm} from '@angular/forms';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import{MessengerService} from 'src/app/services/messenger.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class LoginComponent implements OnInit {
 
   constructor(private router:Router,
-              private authService: AuthenticationService) { }
+              private authService: AuthenticationService,
+              private msg:MessengerService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +24,8 @@ export class LoginComponent implements OnInit {
     if (form.value.email=="miraj" &&  form.value.password=="miraj123@@")
        {
         this.authService.removeToken();
-        this.authService.storeToken("miraj");
+        this.authService.storeToken("miraj@@12!@#@");
+        this.msg.IsAutenticat$.next(true);
         this.router.navigate(['dashboard']);
        }
    else{

@@ -1,9 +1,10 @@
 <div class='container-fluid'>
   <div class='row'>
-      <div class='col-sm-12'>
-         <app-navmenu></app-navmenu>
+      <div class='col-sm-2' *ngIf="IsAutenticat">
+
+         <app-navmenu ></app-navmenu>
       </div>
-      <div class='col-sm-12 body-content'>
+      <div class='col-sm-10 body-content'>
         <router-outlet></router-outlet>
       </div>
    </div>

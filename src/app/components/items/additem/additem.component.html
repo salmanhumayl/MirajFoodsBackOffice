@@ -9,6 +9,25 @@
           <h3 class="panel-title">New Item</h3>
       </div>
       <div class="panel-body">
+        <div class="form-group">
+          <label>Category <span>*</span></label>
+          <select id="category" name="category" class="form-control">
+              <option value="1">Chicken</option>
+              <option value="2">Household Essentials</option>
+              <option value="3">Dates</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Sub Category <span>*</span></label>
+          <select id="subcategory" name="subcategory" class="form-control">
+              <option value="1">Breast</option>
+              <option value="2">Legs</option>
+              <option value="3">Thighs</option>
+
+          </select>
+
+
+      </div>
           <div class="form-group">
               <label>Name <span>*</span></label>
               <input type="text" class="form-control"
@@ -43,6 +62,23 @@
         >
     </div>
 
+    <div class="form-group">
+      <label >Apply Tax </label>
+      <input type="checkbox" class="form-control"
+      id="ApplyTax"
+      name="ApplyTax"
+
+
+      >
+  </div>
+  <div class="form-group">
+    <label >Showon LandingPage </label>
+    <input type="checkbox" class="form-control"
+    id="landingpage"
+    name="landingpage"
+    >
+</div>
+
       </div>
 
 
@@ -50,7 +86,7 @@
 
       <div class="panel-footer">
           <button class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
-          <button class="btn btn-danger" >Cancel</button>
+          <button class="btn btn-danger" (click)="cancel()"  >Cancel</button>
 
       </div>
 

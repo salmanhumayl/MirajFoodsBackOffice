@@ -57,6 +57,14 @@ getItems():Observable<Product[]>
 );
 }
 
+GetProductsbyid(id:number):Observable<Product>{
+
+  return this._http.get<Product>("http://eservices.mirajfoods.ca/api/item" + "?iid=" + id)
+  .pipe(
+    catchError(this.handleError)
+);
+  }
+
 
 
 }
