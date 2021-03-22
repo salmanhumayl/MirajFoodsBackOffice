@@ -2,7 +2,7 @@
   Form submitted successfully.
 </p>
 
-<form #userForm="ngForm" novalidate (ngSubmit)="onFormSubmit()">
+<form #itemForm="ngForm" novalidate (ngSubmit)="onFormSubmit()">
   <div class="panel panel-primary">
       <div class="panel-heading ">
 
@@ -11,7 +11,7 @@
       <div class="panel-body">
         <div class="form-group">
           <label>Category <span>*</span></label>
-          <select id="category" name="category" class="form-control">
+          <select id="catalog" name="catalog" class="form-control">
               <option value="1">Chicken</option>
               <option value="2">Household Essentials</option>
               <option value="3">Dates</option>
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
           <label>Sub Category <span>*</span></label>
-          <select id="subcategory" name="subcategory" class="form-control">
+          <select id="category" name="category" class="form-control" [(ngModel)]="Items.category_id">
               <option value="1">Breast</option>
               <option value="2">Legs</option>
               <option value="3">Thighs</option>
@@ -31,33 +31,36 @@
           <div class="form-group">
               <label>Name <span>*</span></label>
               <input type="text" class="form-control"
-              id="LoginModel.Email"
-              name="LoginModel.Email"
-             required
+              id="description"
+              name="description"
+              [(ngModel)]="Items.item_description"
+              required
               >
           </div>
           <div class="form-group">
             <label>UOM</label>
             <input type="text" class="form-control"
-            id="LoginModel.Email"
-            name="LoginModel.Email"
-           required
+            id="uom"
+            name="uom"
+            [(ngModel)]="Items.item_uom"
+
             >
         </div>
 
         <div class="form-group">
           <label>Size</label>
           <input type="text" class="form-control"
-          id="LoginModel.Email"
-          name="LoginModel.Email"
-         required
+          id="size"
+          name="size"
+          [(ngModel)]="Items.item_size"
           >
       </div>
       <div class="form-group">
         <label>Price <span>*</span></label>
         <input type="text" class="form-control"
-        id="LoginModel.Email"
-        name="LoginModel.Email"
+        id="price"
+        name="price"
+        [(ngModel)]="Items.item_price"
        required
         >
     </div>
@@ -67,7 +70,7 @@
       <input type="checkbox" class="form-control"
       id="ApplyTax"
       name="ApplyTax"
-
+      [(ngModel)]="Items.ApplyTax"
 
       >
   </div>
@@ -76,6 +79,7 @@
     <input type="checkbox" class="form-control"
     id="landingpage"
     name="landingpage"
+    [(ngModel)]="Items.ShowonlandingPage"
     >
 </div>
 
@@ -85,7 +89,7 @@
 
 
       <div class="panel-footer">
-          <button class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+          <button class="btn btn-primary" [disabled]="itemForm.invalid">Submit</button>
           <button class="btn btn-danger" (click)="cancel()"  >Cancel</button>
 
       </div>
@@ -99,4 +103,4 @@
   <input id="dataofBirth" name="dataofBirth" type="text" [(ngModel)]="dataofBirth"  bsDatepicker   />
 
 </div> -->
-<!-- {{userForm.value | json}} -->
+ {{itemForm.value | json}}

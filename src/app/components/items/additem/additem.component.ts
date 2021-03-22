@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/models/Products';
 import { MjfserviceService } from 'src/app/services/mjfservice.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { MjfserviceService } from 'src/app/services/mjfservice.service';
 })
 export class AdditemComponent implements OnInit {
   isValidFormSubmitted:boolean=false;
+  Items:Product=new Product();
 
   constructor(private _MJFService:MjfserviceService,
               private _router:Router) { }
@@ -17,7 +19,7 @@ export class AdditemComponent implements OnInit {
   }
 
   onFormSubmit(){
-
+    alert(this.Items.item_description);
   }
 
   cancel(){

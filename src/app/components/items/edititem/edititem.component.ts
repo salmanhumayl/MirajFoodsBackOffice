@@ -19,6 +19,7 @@ export class EdititemComponent implements OnInit {
               private _router:Router) {
                     if (this._avRoute.snapshot.params["id"]){
                       this.id=this._avRoute.snapshot.params["id"]
+
                     }
 
                }
@@ -43,12 +44,13 @@ export class EdititemComponent implements OnInit {
 
                }
       );
-      //this.productitems=this._itemService.getProducts();
-      //this.inItems=this.productitems.find(p=>p.item_id==this.id);
+
 
   }
 
   onFormSubmit(){
+
+
 
   }
 
