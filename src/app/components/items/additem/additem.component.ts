@@ -19,6 +19,7 @@ export class AdditemComponent implements OnInit {
   }
 
   onFormSubmit(){
+    this.Items.item_id=0;
     alert(this.Items.item_description);
   }
 
