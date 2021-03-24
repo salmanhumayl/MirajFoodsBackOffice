@@ -1,0 +1,53 @@
+<br>
+<p>
+    <!--<button (click)="AddUserRole()" class="btn btn-primary"> Add User In Role <i class="glyphicon glyphicon-record"></i></button>-->
+
+    <a [routerLink]="['/addcategory']" class="btn btn-primary">ADD NEW CATEGORY</a>
+</p>
+
+
+<div class="ui inverted dimmer" [class.active]='loading'>
+    <div class="ui text loader">Loading</div>
+  </div>
+
+<!-- <div>
+    <p>
+        <input type="text" [(ngModel)]="searchterm" placeholder="Search By Name" class="form-control" />
+
+    </p>
+</div> -->
+<br />
+
+
+<table class='table table-bordered table-hover table-striped' *ngIf="catalog">
+    <thead>
+        <tr>
+
+           <th>Name</th>
+           <th>Show On Menu</th>
+           <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--<tr *ngFor="let UserRole of UserRoles | slice:startIndex:endIndex">-->
+        <tr *ngFor="let items of catalog">
+
+            <td>
+                <a>
+                    {{ items.catalog_description}}
+                </a>
+            </td>
+            <td>
+              <a>
+                  {{ items.ShowonlandingPage}}
+              </a>
+          </td>
+            <td>
+                <a [routerLink]="['/edititems',items.catalog_id]" class="btn btn-primary">Edit</a>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

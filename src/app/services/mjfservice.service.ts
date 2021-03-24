@@ -7,6 +7,9 @@ import { Observable, Subject, throwError } from 'rxjs';
 import { OrderDetail } from 'src/app/models/OrderDetail';
 import {Updateorderstatus} from 'src/app/models/Updateorderstatus'
 import {Product} from 'src/app/models/Products';
+import { Catalog } from '../models/catalog';
+import { Category } from '../models/Category';
+import { ProductViewModel } from '../models/productViewModel';
 
 @Injectable({
   providedIn: 'root'
@@ -48,10 +51,10 @@ export class MjfserviceService {
 );
 }
 
-getItems():Observable<Product[]>
+getItems():Observable<ProductViewModel[]>
 {
 
-   return this._http.get<Product[]>("http://eservices.mirajfoods.ca/api/item")
+   return this._http.get<ProductViewModel[]>("http://eservices.mirajfoods.ca/api/AdminItem")
   .pipe(
     catchError(this.handleError)
 );
@@ -66,5 +69,31 @@ GetProductsbyid(id:number):Observable<Product>{
   }
 
 
+
+  getCatalog():Observable<Catalog[]>
+{
+   return this._http.get<Catalog[]>("http://eservices.mirajfoods.ca/api/AdminCatalog")
+  .pipe(
+    catchError(this.handleError)
+);
+}
+
+getSubCategory():Observable<Category[]>
+{
+   return this._http.get<Category[]>("http://eservices.mirajfoods.ca/api/AdminCategory")
+  .pipe(
+    catchError(this.handleError)
+);
+}
+
+AddItem(formdata:FormData):Observable<boolean>{
+  return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminItem/AddItem",formdata);
+}
+
+
+
+AddCatalog(model:Catalog):Observable<boolean>{
+  return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminCatalog/AddCatalog",model);
+}
 
 }

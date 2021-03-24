@@ -15,14 +15,16 @@
 
                 <li [routerLinkActive]="['link-active']">
                   <a>
+                    <a routerLink='/category'>
                       <span class='glyphicon glyphicon-th-list'></span> Category
+                  </a>
                   </a>
               </li>
 
                 <li [routerLinkActive]="['link-active']">
-                  <a>
-                      <span class='glyphicon glyphicon-th-list'></span> Sub Category
-                  </a>
+                  <a routerLink='/subcategory'>
+                    <span class='glyphicon glyphicon-th-list'></span> Sub Category
+                </a>
                 </li>
                   <li [routerLinkActive]="['link-active']">
                       <a routerLink='/items'>
@@ -35,11 +37,7 @@
                         <span class='glyphicon glyphicon-th-list'></span> Deals
                     </a>
                 </li>
-                <li [routerLinkActive]="['link-active']">
-                  <a >
-                      <span class='glyphicon glyphicon-th-list'></span> Create New Deal
-                  </a>
-              </li>
+
 
 
                   <li [routerLinkActive]="['link-active']">

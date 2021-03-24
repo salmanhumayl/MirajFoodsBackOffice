@@ -1,0 +1,54 @@
+<br>
+<p>
+    <!--<button (click)="AddUserRole()" class="btn btn-primary"> Add User In Role <i class="glyphicon glyphicon-record"></i></button>-->
+
+    <a [routerLink]="['/addsubcategory']" class="btn btn-primary">ADD NEW SUBCATEGORY</a>
+</p>
+
+
+<div class="ui inverted dimmer" [class.active]='loading'>
+    <div class="ui text loader">Loading</div>
+  </div>
+
+<!-- <div>
+    <p>
+        <input type="text" [(ngModel)]="searchterm" placeholder="Search By Name" class="form-control" />
+
+    </p>
+</div> -->
+<br />
+
+
+<table class='table table-bordered table-hover table-striped' *ngIf="subcategory">
+    <thead>
+        <tr>
+          <th>Category</th>
+           <th>Name</th>
+           <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--<tr *ngFor="let UserRole of UserRoles | slice:startIndex:endIndex">-->
+        <tr *ngFor="let items of subcategory">
+
+          <td>
+            <a>
+                {{ items.Catalog_Description}}
+            </a>
+        </td>
+            <td>
+                <a>
+                    {{ items.Category_Description}}
+                </a>
+            </td>
+
+            <td>
+                <a [routerLink]="['/edititems',items.Category_ID]" class="btn btn-primary">Edit</a>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+

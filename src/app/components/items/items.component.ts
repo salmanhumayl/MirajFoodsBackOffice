@@ -1,7 +1,7 @@
 import { getLocaleDateTimeFormat } from '@angular/common';
 import { getTranslationDeclStmts } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/Products';
+import { ProductViewModel } from 'src/app/models/productViewModel';
 import { MjfserviceService } from 'src/app/services/mjfservice.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { MjfserviceService } from 'src/app/services/mjfservice.service';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  productitems:Product[]=[]; //blank array to start with
+  productitems:ProductViewModel[]=[]; //blank array to start with
   loading:boolean=true;
   searchterm:string;
 

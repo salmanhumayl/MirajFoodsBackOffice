@@ -11,18 +11,18 @@
       <div class="panel-body">
         <div class="form-group">
           <label>Category <span>*</span></label>
-          <select id="catalog" name="catalog" class="form-control">
-              <option value="1">Chicken</option>
-              <option value="2">Household Essentials</option>
-              <option value="3">Dates</option>
+          <select id="catalog" name="Catalog_ID" [(ngModel)]="CatalogID" class="form-control" (change)="fillSubCategory()">
+              <option *ngFor="let c of catalog" [value]="c.catalog_id">
+                {{c.catalog_description}}
+              </option>
           </select>
         </div>
         <div class="form-group">
           <label>Sub Category <span>*</span></label>
-          <select id="category" name="category" class="form-control" [(ngModel)]="Items.category_id">
-              <option value="1">Breast</option>
-              <option value="2">Legs</option>
-              <option value="3">Thighs</option>
+          <select id="Category_ID" name="Category_ID" [(ngModel)]="Items.Category_ID" class="form-control" >
+            <option *ngFor="let s of subcategory" [value]="s.Category_ID">
+              {{s.Category_Description}}
+            </option>
 
           </select>
 
@@ -81,7 +81,25 @@
     name="ShowonLandingPage"
     [(ngModel)]="Items.ShowonlandingPage"
     >
-</div>
+  </div>
+
+  <div class="form-group">
+    <label >Image 1 </label>
+    <input type="file"  class="form-control"
+          title="Browse Image"
+          (change)=PrimaryImage($event.target.files)
+    >
+  </div>
+  <div class="form-group">
+    <label >Image 2 </label>
+    <input type="file"  class="form-control"
+          title="Browse Image"
+          (change)=SecondaryImage($event.target.files)
+    >
+  </div>
+
+
+
 
       </div>
 

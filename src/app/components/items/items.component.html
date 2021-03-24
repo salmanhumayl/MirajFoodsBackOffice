@@ -22,21 +22,35 @@
 <table class='table table-bordered table-hover table-striped' *ngIf="productitems">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>UOM</th>
-            <th>Size</th>
-            <th>Action</th>
+
+           <th>Name</th>
+           <th>Category</th>
+           <th>Sub Category</th>
+           <th>Price</th>
+           <th>UOM</th>
+           <th>Size</th>
+           <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <!--<tr *ngFor="let UserRole of UserRoles | slice:startIndex:endIndex">-->
         <tr *ngFor="let items of productitems">
+
             <td>
                 <a>
                     {{ items.item_description}}
                 </a>
             </td>
+            <td>
+              <a>
+                  {{ items.catalog_description}}
+              </a>
+          </td>
+          <td>
+            <a>
+                {{ items.category_description}}
+            </a>
+        </td>
             <td>
                 {{items.item_price}}
             </td>

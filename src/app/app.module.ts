@@ -12,6 +12,12 @@ import { LoginComponent } from './components/login/login.component';
 import { ItemsComponent } from './components/items/items.component';
 import { AdditemComponent } from './components/items/additem/additem.component';
 import { EdititemComponent } from './components/items/edititem/edititem.component';
+import { CategoryComponent } from './components/category/category.component';
+import { AddcategoryComponent } from './components/category/addcategory/addcategory.component';
+import { EditcategoryComponent } from './components/category/editcategory/editcategory.component';
+import { SubcategoryComponent } from './components/subcategory/subcategory.component';
+import { AddComponent } from './components/subcategory/add/add.component';
+import { EditComponent } from './components/subcategory/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { EdititemComponent } from './components/items/edititem/edititem.componen
     LoginComponent,
     ItemsComponent,
     AdditemComponent,
-    EdititemComponent
+    EdititemComponent,
+    CategoryComponent,
+    AddcategoryComponent,
+    EditcategoryComponent,
+    SubcategoryComponent,
+    AddComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
