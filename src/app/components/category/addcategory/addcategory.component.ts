@@ -18,11 +18,18 @@ export class AddcategoryComponent implements OnInit {
   }
 
  onFormSubmit(){
-alert(this.Catalog.ShowonlandingPage);
+
   this._MJFService.AddCatalog(this.Catalog).subscribe(
 
     (response)=>{
-        alert(response)
+        if (response==true)
+        {
+          this._router.navigate(['/category']);
+        }
+        else
+        {
+          alert("Error");
+        }
 
     }
 

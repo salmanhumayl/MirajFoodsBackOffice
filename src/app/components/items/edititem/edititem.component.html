@@ -63,10 +63,14 @@
       <div class="form-group">
         <label >Showon LandingPage </label>
         <input type="checkbox" class="form-control"
-        id="landingpage"
-        name="landingpage"
-        [(ngModel)]="ShowonLandingPage"
+        id="ShowonlandingPage"
+        name="ShowonlandingPage"
+        [(ngModel)]="inItems.ShowonlandingPage"
         >
+    </div>
+    <div>
+      <img [src]="inItems.item_primary_thumb">
+      <img [src]="inItems.item_secondary_thumb">
     </div>
   </div>
       <div class="panel-footer">
@@ -84,5 +88,5 @@
   <input id="dataofBirth" name="dataofBirth" type="text" [(ngModel)]="dataofBirth"  bsDatepicker   />
 
 </div> -->
- {{userForm.value | json}}
+<!--  {{userForm.value | json}} -->
 

@@ -2,7 +2,7 @@
 <p>
     <!--<button (click)="AddUserRole()" class="btn btn-primary"> Add User In Role <i class="glyphicon glyphicon-record"></i></button>-->
 
-    <a [routerLink]="['/addsubcategory']" class="btn btn-primary">ADD NEW SUBCATEGORY</a>
+    <a [routerLink]="['/addsubcategory']" class="btn btn-success">ADD NEW SUBCATEGORY</a>
 </p>
 
 
@@ -23,7 +23,7 @@
     <thead>
         <tr>
           <th>Category</th>
-           <th>Name</th>
+           <th>Sub Category</th>
            <th>Action</th>
         </tr>
     </thead>
@@ -43,7 +43,7 @@
             </td>
 
             <td>
-                <a [routerLink]="['/edititems',items.Category_ID]" class="btn btn-primary">Edit</a>
+                <a  class="btn btn-primary">Edit</a>
 
             </td>
         </tr>

@@ -16,7 +16,8 @@ export class AdditemComponent implements OnInit {
   catalog:Catalog[]=[]
   subcategory:Category[]=[]
   CatalogID:number;
-
+  item_primary_thumb:File;
+  item_secondary_thumb:File;
   constructor(private _MJFService:MjfserviceService,
               private _router:Router) { }
 
@@ -37,13 +38,21 @@ export class AdditemComponent implements OnInit {
     formdata.append("ShowonlandingPage",this.Items.ShowonlandingPage.toString());
  */
     formdata.append("model",JSON.stringify(this.Items));
-    formdata.append("PrimaryImg",this.Items.item_primary_thumb);
-    formdata.append("SecondaryImg",this.Items.item_secondary_thumb);
+    formdata.append("PrimaryImg",this.item_primary_thumb);
+    formdata.append("SecondaryImg",this.item_secondary_thumb);
 
     this._MJFService.AddItem(formdata).subscribe(
 
         (response)=>{
+          if (response==true)  {
             alert(response)
+            this._router.navigate(['/items']);
+          }
+          else
+          {
+            alert("Error")
+            this._router.navigate(['/items']);
+          }
 
         }
 
@@ -96,12 +105,13 @@ export class AdditemComponent implements OnInit {
 
   PrimaryImage(file:FileList)
   {
-    this.Items.item_primary_thumb=file.item[0];
+    this.item_primary_thumb=file.item(0);
+
   }
 
   SecondaryImage(file:FileList)
   {
-    this.Items.item_secondary_thumb=file.item[0];
+    this.item_secondary_thumb=file.item(0);
   }
 
 }

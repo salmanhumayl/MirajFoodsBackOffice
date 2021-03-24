@@ -86,6 +86,8 @@ getSubCategory():Observable<Category[]>
 );
 }
 
+
+
 AddItem(formdata:FormData):Observable<boolean>{
   return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminItem/AddItem",formdata);
 }
@@ -94,6 +96,10 @@ AddItem(formdata:FormData):Observable<boolean>{
 
 AddCatalog(model:Catalog):Observable<boolean>{
   return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminCatalog/AddCatalog",model);
+}
+
+AddSubCategory(model:Category):Observable<boolean>{
+  return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminCategory/AddCategory",model);
 }
 
 }

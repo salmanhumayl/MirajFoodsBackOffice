@@ -6,11 +6,12 @@ export class Product {
    item_uom:string;
    item_price :number;
    oldprice:number
-   item_primary_thumb:File;
-   item_secondary_thumb:File;
+   item_primary_thumb:string;
+   item_secondary_thumb:string;
    qty:number;
    ApplyTax:boolean;
    ShowonlandingPage:boolean;
+
    itemsimages: string[];
    itemspecification:string[];
 

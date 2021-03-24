@@ -10,14 +10,14 @@
 
         <div class="form-group">
           <label>Category <span>*</span></label>
-          <select id="catalog" name="Catalog_ID" [(ngModel)]="Category.Catalog_ID" class="form-control" (change)="fillSubCategory()">
+          <select id="catalog" name="Catalog_ID" [(ngModel)]="Category.Catalog_ID" class="form-control" >
               <option *ngFor="let c of catalog" [value]="c.catalog_id">
                 {{c.catalog_description}}
               </option>
           </select>
         </div>
           <div class="form-group">
-              <label>Name <span>*</span></label>
+              <label>Sub Category Name <span>*</span></label>
               <input type="text" class="form-control"
               id="Category_Description"
               name="Category_Description"
@@ -52,4 +52,5 @@
   <input id="dataofBirth" name="dataofBirth" type="text" [(ngModel)]="dataofBirth"  bsDatepicker   />
 
 </div> -->
- {{itemForm.value | json}}
+<!--  {{itemForm.value | json}}
+ -->

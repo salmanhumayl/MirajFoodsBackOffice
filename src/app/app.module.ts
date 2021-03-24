@@ -18,6 +18,7 @@ import { EditcategoryComponent } from './components/category/editcategory/editca
 import { SubcategoryComponent } from './components/subcategory/subcategory.component';
 import { AddComponent } from './components/subcategory/add/add.component';
 import { EditComponent } from './components/subcategory/edit/edit.component';
+import { FilterorderComponent } from './components/filterorder/filterorder.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { EditComponent } from './components/subcategory/edit/edit.component';
     EditcategoryComponent,
     SubcategoryComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    FilterorderComponent
   ],
   imports: [
     BrowserModule,
