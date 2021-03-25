@@ -14,6 +14,8 @@ import { CategoryComponent } from './components/category/category.component';
 import { SubcategoryComponent } from './components/subcategory/subcategory.component';
 import { AddcategoryComponent } from './components/category/addcategory/addcategory.component';
 import { AddComponent } from './components/subcategory/add/add.component';
+import { SpecificationComponent } from './components/specification/specification.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 const routes: Routes = [
   {path:'dashboard',component:dashboardComponent,canActivate:[AuthGuardService]},
@@ -29,6 +31,9 @@ const routes: Routes = [
   {path:'items',component:ItemsComponent,canActivate:[AuthGuardService]},
   {path:'additems',component:AdditemComponent,canActivate:[AuthGuardService]},
   {path:'edititems/:id',component:EdititemComponent,canActivate:[AuthGuardService]},
+
+  {path:'addspecification',component:SpecificationComponent,canActivate:[AuthGuardService]},
+  {path:'gallery',component:GalleryComponent,canActivate:[AuthGuardService]},
   {path:'',redirectTo:'/login',pathMatch:'full'}
 
 ];

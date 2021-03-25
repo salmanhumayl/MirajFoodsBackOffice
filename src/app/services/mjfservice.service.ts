@@ -92,6 +92,14 @@ AddItem(formdata:FormData):Observable<boolean>{
   return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminItem/AddItem",formdata);
 }
 
+UpdateItem(formdata:FormData):Observable<boolean>{
+  return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminItemUpdate/UpdateItem",formdata)
+  .pipe(
+    catchError(this.handleError)
+);
+}
+
+
 
 
 AddCatalog(model:Catalog):Observable<boolean>{

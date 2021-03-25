@@ -1,0 +1,63 @@
+<br>
+
+  <form #itemForm="ngForm" novalidate>
+    <div class="panel panel-primary">
+        <div class="panel-heading ">
+
+            <h3 class="panel-title"></h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Specification <span>*</span></label>
+            <input type="text" class="form-control"
+            id="description"
+            name="description"
+            required
+            >
+        </div>
+        <div class="form-group">
+          <label>Sno <span>*</span></label>
+          <input type="text" class="form-control"
+          id="description"
+          name="description"
+
+          required
+          >
+      </div>
+
+
+        </div>
+
+
+
+
+        <div class="panel-footer">
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-danger">Cancel</button>
+
+        </div>
+
+    </div>
+
+  </form>
+
+
+
+
+<div class="ui inverted dimmer" [class.active]='loading'>
+    <div class="ui text loader">Loading</div>
+  </div>
+
+<table class='table table-bordered table-hover table-striped' >
+    <thead>
+        <tr>
+           <th>Specification</th>
+           <th>Sno</th>
+           <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+

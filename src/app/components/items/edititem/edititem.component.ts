@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/Products';
 import { MjfserviceService } from 'src/app/services/mjfservice.service';
@@ -13,6 +13,12 @@ export class EdititemComponent implements OnInit {
   inItems:Product;
   id:number=0;
   ShowonLandingPage:boolean;
+  item_primary_thumb:File;
+  item_secondary_thumb:File;
+
+  @ViewChild('imgSec') SecondaryImg:ElementRef;
+  @ViewChild('imgPrimary') PrimaryImg:ElementRef;
+
 
   constructor(private _MJFService:MjfserviceService,
               private _avRoute:ActivatedRoute,
@@ -36,7 +42,7 @@ export class EdititemComponent implements OnInit {
 
         (data)=>{
           this.inItems=data;
-
+          console.log(this.inItems);
 
       },
       error => {
@@ -50,12 +56,72 @@ export class EdititemComponent implements OnInit {
 
   onFormSubmit(){
 
+    const formdata=new FormData();
+    formdata.append("model",JSON.stringify(this.inItems));
+    formdata.append("PrimaryImg",this.item_primary_thumb);
+    formdata.append("SecondaryImg",this.item_secondary_thumb);
+
+    this._MJFService.UpdateItem(formdata).subscribe(
+
+      (response)=>{
+          if (response==true)  {
+            alert(response)
+            this._router.navigate(['/items']);
+          }
+          else
+          {
+            alert(response)
+            this._router.navigate(['/items']);
+          }
+
+        },
+        error => {
+          alert(error);
+
+        }
+
+
+    );
 
 
   }
 
+
   cancel(){
     this._router.navigate(['/items']);
+  }
+
+  deleteimage(itemid:number,type:string){
+    if (type=="P"){
+      this.PrimaryImg.nativeElement.src="";
+    }
+    if (type=="S"){
+      this.SecondaryImg.nativeElement.src="";
+    }
+
+   /*  this._MJFService.deleteimage(itemid,type).subscribe(
+
+      (data)=>{
+
+
+
+    },
+    error => {
+               alert(error);
+
+             }
+    ); */
+  }
+
+  PrimaryImage(file:FileList)
+  {
+    this.item_primary_thumb=file.item(0);
+
+  }
+
+  SecondaryImage(file:FileList)
+  {
+    this.item_secondary_thumb=file.item(0);
   }
 
 }

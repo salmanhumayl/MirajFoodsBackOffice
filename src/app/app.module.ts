@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { dashboardComponent } from './components/dashboard/dashboard.component';
 import { NavmenuComponent } from './components/navmenu/navmenu.component';
@@ -19,6 +21,8 @@ import { SubcategoryComponent } from './components/subcategory/subcategory.compo
 import { AddComponent } from './components/subcategory/add/add.component';
 import { EditComponent } from './components/subcategory/edit/edit.component';
 import { FilterorderComponent } from './components/filterorder/filterorder.component';
+import { SpecificationComponent } from './components/specification/specification.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +41,17 @@ import { FilterorderComponent } from './components/filterorder/filterorder.compo
     SubcategoryComponent,
     AddComponent,
     EditComponent,
-    FilterorderComponent
+    FilterorderComponent,
+    SpecificationComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
