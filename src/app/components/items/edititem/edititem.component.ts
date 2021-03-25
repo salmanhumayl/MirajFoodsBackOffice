@@ -15,6 +15,7 @@ export class EdititemComponent implements OnInit {
   ShowonLandingPage:boolean;
   item_primary_thumb:File;
   item_secondary_thumb:File;
+  ButtonText="Update"
 
   @ViewChild('imgSec') SecondaryImg:ElementRef;
   @ViewChild('imgPrimary') PrimaryImg:ElementRef;
@@ -56,7 +57,9 @@ export class EdititemComponent implements OnInit {
 
   onFormSubmit(){
 
+    this.ButtonText="Please wait....";
     const formdata=new FormData();
+
     formdata.append("model",JSON.stringify(this.inItems));
     formdata.append("PrimaryImg",this.item_primary_thumb);
     formdata.append("SecondaryImg",this.item_secondary_thumb);
@@ -65,12 +68,12 @@ export class EdititemComponent implements OnInit {
 
       (response)=>{
           if (response==true)  {
-            alert(response)
+            //alert(response)
             this._router.navigate(['/items']);
           }
           else
           {
-            alert(response)
+            //alert(response)
             this._router.navigate(['/items']);
           }
 

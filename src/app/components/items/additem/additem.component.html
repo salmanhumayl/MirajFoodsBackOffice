@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
           <label>Sub Category <span>*</span></label>
-          <select id="Category_ID" name="Category_ID" [(ngModel)]="Items.Category_ID" class="form-control" >
+          <select id="Category_ID" name="category_id" [(ngModel)]="Items.category_id" class="form-control" >
             <option *ngFor="let s of subcategory" [value]="s.Category_ID">
               {{s.Category_Description}}
             </option>

@@ -45,12 +45,12 @@ export class AdditemComponent implements OnInit {
 
         (response)=>{
           if (response==true)  {
-            alert(response)
+           // alert(response)
             this._router.navigate(['/items']);
           }
           else
           {
-            alert("Error")
+           // alert("Error")
             this._router.navigate(['/items']);
           }
 
