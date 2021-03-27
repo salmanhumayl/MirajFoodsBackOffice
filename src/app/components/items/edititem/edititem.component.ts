@@ -67,13 +67,13 @@ export class EdititemComponent implements OnInit {
     this._MJFService.UpdateItem(formdata).subscribe(
 
       (response)=>{
-          if (response==true)  {
-            //alert(response)
+          if (response=="")  {
+           // alert(response)
             this._router.navigate(['/items']);
           }
           else
           {
-            //alert(response)
+            alert(response)
             this._router.navigate(['/items']);
           }
 

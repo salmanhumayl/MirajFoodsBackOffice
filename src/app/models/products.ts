@@ -12,7 +12,7 @@ export class Product {
    ApplyTax:boolean;
    ShowonlandingPage:boolean;
 
-   itemsimages: string[];
-   itemspecification:string[];
+  // itemsimages: string[];
+   //itemspecification:string[];
 
  }

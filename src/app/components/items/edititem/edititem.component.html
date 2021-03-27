@@ -10,18 +10,7 @@
       </div>
       <div class="panel-body">
           <div class="form-group">
-            <input type="text" class="form-control"
-            id="item_id"
-            name="item_id"
-            [(ngModel)]="inItems.item_id"
 
-            >
-            <input type="text" class="form-control"
-            id="category_id"
-            name="category_id"
-            [(ngModel)]="inItems.category_id"
-
-            >
               <label>Name <span>*</span></label>
               <input type="text" class="form-control"
               id="item_description"
@@ -33,8 +22,8 @@
           <div class="form-group">
             <label>UOM</label>
             <input type="text" class="form-control"
-            id="UOM"
-            name="UOM"
+            id="item_uom"
+            name="item_uom"
             [(ngModel)]="inItems.item_uom"
           >
           </div>
@@ -42,8 +31,8 @@
           <div class="form-group">
           <label>Size</label>
           <input type="text" class="form-control"
-          id="Size"
-          name="Size"
+          id="item_size"
+          name="item_size"
           [(ngModel)]="inItems.item_size"
 
           >
@@ -51,8 +40,8 @@
          <div class="form-group">
         <label>Price <span>*</span></label>
         <input type="text" class="form-control"
-        id="Price"
-        name="Price"
+        id="item_price"
+        name="item_price"
         required
         [(ngModel)]="inItems.item_price"
         >
@@ -111,5 +100,5 @@
   <input id="dataofBirth" name="dataofBirth" type="text" [(ngModel)]="dataofBirth"  bsDatepicker   />
 
 </div> -->
- <!-- {{userForm.value | json}} -->
-
+ <!--  {{userForm.value | json}}
+ -->

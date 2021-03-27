@@ -44,13 +44,13 @@ export class AdditemComponent implements OnInit {
     this._MJFService.AddItem(formdata).subscribe(
 
         (response)=>{
-          if (response==true)  {
+          if (response=="")  {
            // alert(response)
             this._router.navigate(['/items']);
           }
           else
           {
-           // alert("Error")
+            alert(response)
             this._router.navigate(['/items']);
           }
 
