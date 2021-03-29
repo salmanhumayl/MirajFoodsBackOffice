@@ -10,6 +10,7 @@ import {Product} from 'src/app/models/Products';
 import { Catalog } from '../models/catalog';
 import { Category } from '../models/Category';
 import { ProductViewModel } from '../models/productViewModel';
+import { itemspecification } from '../models/itemspecification';
 
 @Injectable({
   providedIn: 'root'
@@ -109,5 +110,32 @@ AddCatalog(model:Catalog):Observable<boolean>{
 AddSubCategory(model:Category):Observable<boolean>{
   return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminCategory/AddCategory",model);
 }
+
+
+
+
+getspecification(itemid:number):Observable<itemspecification[]>{
+
+  return this._http.get<itemspecification[]>("http://eservices.mirajfoods.ca/api/specification/GetItemSpecification" + "?item_id=" + itemid)
+  .pipe(
+    catchError(this.handleError)
+);
+  }
+
+  AddSpecification(model:itemspecification):Observable<string>{
+
+    return this._http.post<string>("http://eservices.mirajfoods.ca/api/specification/AddSpecification",model);
+  }
+
+  EditSpecification(model:itemspecification):Observable<string>{
+
+    return this._http.post<string>("http://eservices.mirajfoods.ca/api/specification/EditSpecification",model);
+  }
+  DeleteSpecification(id:number):Observable<boolean>{
+
+    return this._http.get<boolean>("http://eservices.mirajfoods.ca/api/specification/DeleteSpecification" + "?id=" + id)
+
+  }
+
 
 }

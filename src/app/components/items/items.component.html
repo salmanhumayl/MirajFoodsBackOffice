@@ -32,7 +32,7 @@
            <th></th>
            <th></th>
            <th></th>
-           <th></th>
+
         </tr>
     </thead>
     <tbody>
@@ -67,7 +67,7 @@
             <td>
                 <a [routerLink]="['/edititems',items.item_id]" class="btn btn-primary  btn-sm">Edit</a>
             </td>
-            <td><a [routerLink]="['/addspecification']" title="Specification">
+            <td><a [routerLink]="['/addspecification',items.item_id]" title="Specification">
                   <span class="glyphicon glyphicon-list-alt"></span>
                 </a>
               </td>
@@ -75,10 +75,7 @@
                 <span class="glyphicon glyphicon-picture"></span>
               </a>
             </td>
-            <td><a title="Tags">
-              <span class="glyphicon glyphicon-tags"></span>
-            </a>
-          </td>
+
 
 
         </tr>

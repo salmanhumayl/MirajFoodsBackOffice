@@ -11,7 +11,8 @@ export class Product {
    qty:number;
    ApplyTax:boolean;
    ShowonlandingPage:boolean;
-
+   halal:boolean;
+   fresh:boolean;
   // itemsimages: string[];
    //itemspecification:string[];
 

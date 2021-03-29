@@ -1,9 +1,9 @@
 export class OrderItems
 {
-         ID :number
-         OrderID:number
-         item_id:number
+         ID :number;
+         OrderID:number;
+         item_id:number;
          item_Description:string;
-         OrderedQuantity :number
-         PerUnitPrice :number
+         OrderedQuantity :number;
+         PerUnitPrice :number;
 }

@@ -23,6 +23,7 @@ import { EditComponent } from './components/subcategory/edit/edit.component';
 import { FilterorderComponent } from './components/filterorder/filterorder.component';
 import { SpecificationComponent } from './components/specification/specification.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { EditspecificationComponent } from './components/specification/editspecification/editspecification.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     EditComponent,
     FilterorderComponent,
     SpecificationComponent,
-    GalleryComponent
+    GalleryComponent,
+    EditspecificationComponent
   ],
   imports: [
     BrowserModule,

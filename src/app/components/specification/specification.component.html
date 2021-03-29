@@ -1,39 +1,38 @@
 <br>
 
-  <form #itemForm="ngForm" novalidate>
+<form #specificationForm="ngForm" novalidate (ngSubmit)="onFormSubmit(specificationForm)">
     <div class="panel panel-primary">
         <div class="panel-heading ">
 
             <h3 class="panel-title"></h3>
         </div>
         <div class="panel-body">
-          <div class="form-group">
-            <label>Specification <span>*</span></label>
-            <input type="text" class="form-control"
-            id="description"
-            name="description"
-            required
-            >
-        </div>
+
         <div class="form-group">
           <label>Sno <span>*</span></label>
           <input type="text" class="form-control"
-          id="description"
-          name="description"
-
+          id="seq_no"
+          name="seq_no"
+          [(ngModel)]="model.seq_no"
           required
           >
+
       </div>
+      <div class="form-group">
+        <label>Specification <span>*</span></label>
+        <input type="text" class="form-control"
+        id="item_specification"
+        name="item_specification"
+        required
+        [(ngModel)]="model.item_specification"
+        >
+      </div>
+    </div>
 
-
-        </div>
-
-
-
-
-        <div class="panel-footer">
-            <button class="btn btn-primary">Submit</button>
-            <button class="btn btn-danger">Cancel</button>
+      <div class="panel-footer">
+        <button class="btn btn-primary" [disabled]="specificationForm.invalid">Submit</button>
+        &nbsp;&nbsp;
+        <button class="btn btn-danger" (click)="cancel()">Cancel</button>
 
         </div>
 
@@ -48,16 +47,38 @@
     <div class="ui text loader">Loading</div>
   </div>
 
-<table class='table table-bordered table-hover table-striped' >
+  <table class='table table-bordered table-hover table-striped' *ngIf="itemspecification">
     <thead>
         <tr>
-           <th>Specification</th>
            <th>Sno</th>
+           <th>Specification</th>
            <th></th>
+           <th></th>
+
         </tr>
     </thead>
     <tbody>
+        <!--<tr *ngFor="let UserRole of UserRoles | slice:startIndex:endIndex">-->
+        <tr *ngFor="let s of itemspecification">
+          <td>
+                {{ s.seq_no}}
 
+          </td>
+          <td>
+
+                {{ s.item_specification}}
+
+        </td>
+
+            <td>
+                <a [routerLink]="['/editspecification',s.id,s.item_specification,s.seq_no,itemid]" class="btn btn-primary  btn-sm">Edit</a>
+            </td>
+            <td>
+              <a (click)="deletespecification(s.id)" class="btn btn-danger  btn-sm">Delete</a>
+          </td>
+
+
+
+        </tr>
     </tbody>
 </table>
-
