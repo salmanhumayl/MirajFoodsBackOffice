@@ -13,6 +13,7 @@ export class Product {
    ShowonlandingPage:boolean;
    halal:boolean;
    fresh:boolean;
+   TaxAmountPercentage:number;
   // itemsimages: string[];
    //itemspecification:string[];
 

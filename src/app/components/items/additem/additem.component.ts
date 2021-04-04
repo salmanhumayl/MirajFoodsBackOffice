@@ -37,6 +37,7 @@ export class AdditemComponent implements OnInit {
     formdata.append("ApplyTax",this.Items.ApplyTax.toString());
     formdata.append("ShowonlandingPage",this.Items.ShowonlandingPage.toString());
  */
+
     formdata.append("model",JSON.stringify(this.Items));
     formdata.append("PrimaryImg",this.item_primary_thumb);
     formdata.append("SecondaryImg",this.item_secondary_thumb);
