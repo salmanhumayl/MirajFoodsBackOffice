@@ -19,6 +19,8 @@ import { EditspecificationComponent } from './components/specification/editspeci
 
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { EditCustomerComponent } from './components/customers/editcustomer/editcustomer.component';
 
 const routes: Routes = [
   {path:'dashboard',component:dashboardComponent,canActivate:[AuthGuardService]},
@@ -39,6 +41,10 @@ const routes: Routes = [
   {path:'editspecification/:id/:specification/:seq_no/:itemid',component:EditspecificationComponent,canActivate:[AuthGuardService]},
 
   {path:'gallery',component:GalleryComponent,canActivate:[AuthGuardService]},
+  {path:'customer',component:CustomersComponent,canActivate:[AuthGuardService]},
+
+  {path:'editcustomer/:id/:FirstName/:Email',component:EditCustomerComponent,canActivate:[AuthGuardService]},
+
   {path:'logout',component:LogoutComponent},
   {path:'',redirectTo:'/login',pathMatch:'full'}
 

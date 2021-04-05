@@ -1,9 +1,5 @@
 <br>
-<p>
-    <!--<button (click)="AddUserRole()" class="btn btn-primary"> Add User In Role <i class="glyphicon glyphicon-record"></i></button>-->
 
-    <a [routerLink]="['/additems']" class="btn btn-success">ADD NEW ITEM</a>
-</p>
 
 
 <div class="ui inverted dimmer" [class.active]='loading'>
@@ -25,6 +21,7 @@
            <th>First Name</th>
            <th>Last Name</th>
            <th>Email Addess</th>
+           <th>Shipping Charges</th>
            <th></th>
 
 
@@ -43,9 +40,13 @@
         <td>
               {{ items.Email}}
       </td>
+      <td>
+         <span *ngIf="items.WaviedShippingCharges" style="color:green;">Waived</span>
+         <span *ngIf="!items.WaviedShippingCharges">Not Waived</span>
+      </td>
 
             <td>
-
+              <a [routerLink]="['/editcustomer',items.customer_id,items.FirstName,items.Email]" class="btn btn-primary  btn-sm">Edit</a>
             </td>
 
 

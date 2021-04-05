@@ -26,6 +26,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { EditspecificationComponent } from './components/specification/editspecification/editspecification.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { CustomersComponent } from './components/customers/customers.component';
+import { EditCustomerComponent } from './components/customers/editcustomer/editcustomer.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CustomersComponent } from './components/customers/customers.component';
     GalleryComponent,
     EditspecificationComponent,
     LogoutComponent,
-    CustomersComponent
+    CustomersComponent,
+    EditCustomerComponent
   ],
   imports: [
     BrowserModule,

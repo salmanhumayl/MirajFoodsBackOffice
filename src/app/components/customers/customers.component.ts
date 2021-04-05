@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
 import { MjfserviceService } from 'src/app/services/mjfservice.service';
-
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',

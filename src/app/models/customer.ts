@@ -1,5 +1,5 @@
 export class Customer {
-  customerid:number
+  customer_id:number
   FirstName:string;
   LastName:string;
   Email: string;

@@ -1,5 +1,4 @@
-import { getLocaleDateTimeFormat } from '@angular/common';
-import { getTranslationDeclStmts } from '@angular/compiler/src/render3/view/template';
+
 import { Component, OnInit } from '@angular/core';
 import { ProductViewModel } from 'src/app/models/productViewModel';
 import { MjfserviceService } from 'src/app/services/mjfservice.service';
