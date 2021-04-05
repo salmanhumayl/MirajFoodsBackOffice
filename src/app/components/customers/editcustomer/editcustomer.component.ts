@@ -38,7 +38,7 @@ export class EditCustomerComponent implements OnInit {
     customer.customer_id=this.id;
     customer.WaviedShippingCharges=waived;
 
-    this._MJFService.UpdateCustomer(customer).subscribe(
+    this._MJFService.WaviedShippingCharges(customer).subscribe(
 
       (response)=>{
         if (response=="")  {

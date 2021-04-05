@@ -148,8 +148,8 @@ getspecification(itemid:number):Observable<itemspecification[]>{
 );
 }
 
-UpdateCustomer(model:Customer):Observable<string>{
-  return this._http.post<string>("http://eservices.mirajfoods.ca/api/Customer/UpdateCustomer",model);
+WaviedShippingCharges(model:Customer):Observable<string>{
+  return this._http.post<string>("http://eservices.mirajfoods.ca/api/Customer/WaviedShippingCharges",model);
 }
 
 }
