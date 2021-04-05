@@ -24,6 +24,8 @@ import { FilterorderComponent } from './components/filterorder/filterorder.compo
 import { SpecificationComponent } from './components/specification/specification.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { EditspecificationComponent } from './components/specification/editspecification/editspecification.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { CustomersComponent } from './components/customers/customers.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { EditspecificationComponent } from './components/specification/editspeci
     FilterorderComponent,
     SpecificationComponent,
     GalleryComponent,
-    EditspecificationComponent
+    EditspecificationComponent,
+    LogoutComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,

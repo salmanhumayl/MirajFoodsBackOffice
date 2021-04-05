@@ -19,7 +19,8 @@ export class OrderDetail
      OrderPayMethod :string;
      PaymentRefrenceId :string;
      Total:number;
-     TaxAmount:number;
+     TaxAmount:number=0;
+     ItemTaxableAmount:number=0;
      Remarks:string;
      Status:number;
      StatusDescription:string;

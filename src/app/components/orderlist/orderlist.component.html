@@ -51,7 +51,7 @@
                         {{detail.Remarks}}
                       </td>
                       <td>
-                          {{detail.Total + detail.ShipingCharges + detail.TaxAmount | number:'1.2-2' |currency:'CAD'}}
+                          {{detail.Total + detail.ShipingCharges + detail.ItemTaxableAmount+ detail.TaxAmount | number:'1.2-2' |currency:'CAD'}}
                       </td>
                       <td>
                         <button type="button" class="btn btn-danger btn-xs" (click) = "showRemindar(detail.OrderID,detail.OrderNumber)">

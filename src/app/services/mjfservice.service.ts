@@ -11,6 +11,7 @@ import { Catalog } from '../models/catalog';
 import { Category } from '../models/Category';
 import { ProductViewModel } from '../models/productViewModel';
 import { itemspecification } from '../models/itemspecification';
+import {Customer} from '../models/customer';
 
 @Injectable({
   providedIn: 'root'
@@ -137,5 +138,14 @@ getspecification(itemid:number):Observable<itemspecification[]>{
 
   }
 
+
+
+  getCustomer():Observable<Customer[]>
+{
+   return this._http.get<Customer[]>("http://eservices.mirajfoods.ca/api/Customer/getcustomer")
+  .pipe(
+    catchError(this.handleError)
+);
+}
 
 }

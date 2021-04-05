@@ -39,12 +39,23 @@
                 </li>
 
 
+                <li [routerLinkActive]="['link-active']">
+                  <a routerLink='/logout'>
+                      <span class='glyphicon glyphicon-th-list'></span> Customer
+                  </a>
+              </li>
 
                   <li [routerLinkActive]="['link-active']">
                       <a >
                           <span class='glyphicon glyphicon-th-list'></span> Reports
                       </a>
                   </li>
+
+                  <li [routerLinkActive]="['link-active']">
+                    <a routerLink='/logout'>
+                        <span class='glyphicon glyphicon-th-list'></span> logout
+                    </a>
+                </li>
               </ul>
           </div>
       </div>
