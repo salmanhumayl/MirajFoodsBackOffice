@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {catchError} from 'rxjs/operators';
+import {catchError, map} from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { Observable, Subject, throwError } from 'rxjs';
+import {ajax} from 'rxjs/ajax';
 
 import { OrderDetail } from 'src/app/models/OrderDetail';
 import {Updateorderstatus} from 'src/app/models/Updateorderstatus'
@@ -12,6 +13,8 @@ import { Category } from '../models/Category';
 import { ProductViewModel } from '../models/productViewModel';
 import { itemspecification } from '../models/itemspecification';
 import {Customer} from '../models/customer';
+import{itemimage } from '../models/itemimage';
+
 
 @Injectable({
   providedIn: 'root'
@@ -152,4 +155,27 @@ WaviedShippingCharges(model:Customer):Observable<string>{
   return this._http.post<string>("http://eservices.mirajfoods.ca/api/Customer/WaviedShippingCharges",model);
 }
 
+
+getImagelist(itemid:number):Observable<itemimage[]>{
+
+  return this._http.get<itemimage[]>("http://eservices.mirajfoods.ca/api/AdminItemGallery/GetImageList?iID=" + itemid  );
+
+
 }
+
+UploadImage(formdata:FormData):Observable<itemimage>{
+
+    return this._http.post<itemimage>("http://eservices.mirajfoods.ca/api/AdminItemGallery/UploadImage",formdata);
+
+
+}
+
+deleteImage(id:number):Observable<boolean>{
+
+  return this._http.get<boolean>("http://eservices.mirajfoods.ca/api/AdminItemGallery/DeleteImage?id=" + id  );
+
+
+}
+
+}
+

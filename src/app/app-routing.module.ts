@@ -40,7 +40,7 @@ const routes: Routes = [
   {path:'addspecification/:itemid',component:SpecificationComponent,canActivate:[AuthGuardService]},
   {path:'editspecification/:id/:specification/:seq_no/:itemid',component:EditspecificationComponent,canActivate:[AuthGuardService]},
 
-  {path:'gallery',component:GalleryComponent,canActivate:[AuthGuardService]},
+  {path:'gallery/:itemid',component:GalleryComponent,canActivate:[AuthGuardService]},
   {path:'customer',component:CustomersComponent,canActivate:[AuthGuardService]},
 
   {path:'editcustomer/:id/:FirstName/:Email',component:EditCustomerComponent,canActivate:[AuthGuardService]},
