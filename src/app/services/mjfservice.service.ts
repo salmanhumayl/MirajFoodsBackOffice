@@ -31,7 +31,7 @@ export class MjfserviceService {
   getOrders():Observable<OrderDetail[]>
   {
 
-     return this._http.get<OrderDetail[]>("http://eservices.mirajfoods.ca/api/adminorder")
+     return this._http.get<OrderDetail[]>("https://eservices.mirajfoods.ca/api/adminorder")
     .pipe(
       catchError(this.handleError)
   );
@@ -41,7 +41,7 @@ export class MjfserviceService {
   getOrderDetail(id:number):Observable<OrderDetail>
   {
 
-     return this._http.get<OrderDetail>("http://eservices.mirajfoods.ca/api/orderbyid?OrderID=" + id)
+     return this._http.get<OrderDetail>("https://eservices.mirajfoods.ca/api/orderbyid?OrderID=" + id)
     .pipe(
       catchError(this.handleError)
   );
@@ -50,7 +50,7 @@ export class MjfserviceService {
 
  UpdateOrderStatus (OrderStatus:Updateorderstatus) :Observable<boolean>  {
 
-  return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/ChangeOrderStatus",OrderStatus)
+  return this._http.post<boolean>("https://eservices.mirajfoods.ca/api/ChangeOrderStatus",OrderStatus)
   .pipe(
     catchError(this.handleError)
 );
@@ -59,7 +59,7 @@ export class MjfserviceService {
 getItems():Observable<ProductViewModel[]>
 {
 
-   return this._http.get<ProductViewModel[]>("http://eservices.mirajfoods.ca/api/AdminItem")
+   return this._http.get<ProductViewModel[]>("https://eservices.mirajfoods.ca/api/AdminItem")
   .pipe(
     catchError(this.handleError)
 );
@@ -67,7 +67,7 @@ getItems():Observable<ProductViewModel[]>
 
 GetProductsbyid(id:number):Observable<Product>{
 
-  return this._http.get<Product>("http://eservices.mirajfoods.ca/api/item" + "?iid=" + id)
+  return this._http.get<Product>("https://eservices.mirajfoods.ca/api/item" + "?iid=" + id)
   .pipe(
     catchError(this.handleError)
 );
@@ -77,7 +77,7 @@ GetProductsbyid(id:number):Observable<Product>{
 
   getCatalog():Observable<Catalog[]>
 {
-   return this._http.get<Catalog[]>("http://eservices.mirajfoods.ca/api/AdminCatalog")
+   return this._http.get<Catalog[]>("https://eservices.mirajfoods.ca/api/AdminCatalog")
   .pipe(
     catchError(this.handleError)
 );
@@ -85,7 +85,7 @@ GetProductsbyid(id:number):Observable<Product>{
 
 getSubCategory():Observable<Category[]>
 {
-   return this._http.get<Category[]>("http://eservices.mirajfoods.ca/api/AdminCategory")
+   return this._http.get<Category[]>("https://eservices.mirajfoods.ca/api/AdminCategory")
   .pipe(
     catchError(this.handleError)
 );
@@ -94,11 +94,11 @@ getSubCategory():Observable<Category[]>
 
 
 AddItem(formdata:FormData):Observable<string>{
-  return this._http.post<string>("http://eservices.mirajfoods.ca/api/AdminItem/AddItem",formdata);
+  return this._http.post<string>("https://eservices.mirajfoods.ca/api/AdminItem/AddItem",formdata);
 }
 
 UpdateItem(formdata:FormData):Observable<string>{
-  return this._http.post<string>("http://eservices.mirajfoods.ca/api/AdminItemUpdate/UpdateItem",formdata)
+  return this._http.post<string>("https://eservices.mirajfoods.ca/api/AdminItemUpdate/UpdateItem",formdata)
   .pipe(
     catchError(this.handleError)
 );
@@ -108,11 +108,11 @@ UpdateItem(formdata:FormData):Observable<string>{
 
 
 AddCatalog(model:Catalog):Observable<boolean>{
-  return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminCatalog/AddCatalog",model);
+  return this._http.post<boolean>("https://eservices.mirajfoods.ca/api/AdminCatalog/AddCatalog",model);
 }
 
 AddSubCategory(model:Category):Observable<boolean>{
-  return this._http.post<boolean>("http://eservices.mirajfoods.ca/api/AdminCategory/AddCategory",model);
+  return this._http.post<boolean>("https://eservices.mirajfoods.ca/api/AdminCategory/AddCategory",model);
 }
 
 
@@ -120,7 +120,7 @@ AddSubCategory(model:Category):Observable<boolean>{
 
 getspecification(itemid:number):Observable<itemspecification[]>{
 
-  return this._http.get<itemspecification[]>("http://eservices.mirajfoods.ca/api/specification/GetItemSpecification" + "?item_id=" + itemid)
+  return this._http.get<itemspecification[]>("https://eservices.mirajfoods.ca/api/specification/GetItemSpecification" + "?item_id=" + itemid)
   .pipe(
     catchError(this.handleError)
 );
@@ -128,16 +128,16 @@ getspecification(itemid:number):Observable<itemspecification[]>{
 
   AddSpecification(model:itemspecification):Observable<string>{
 
-    return this._http.post<string>("http://eservices.mirajfoods.ca/api/specification/AddSpecification",model);
+    return this._http.post<string>("https://eservices.mirajfoods.ca/api/specification/AddSpecification",model);
   }
 
   EditSpecification(model:itemspecification):Observable<string>{
 
-    return this._http.post<string>("http://eservices.mirajfoods.ca/api/specification/EditSpecification",model);
+    return this._http.post<string>("https://eservices.mirajfoods.ca/api/specification/EditSpecification",model);
   }
   DeleteSpecification(id:number):Observable<boolean>{
 
-    return this._http.get<boolean>("http://eservices.mirajfoods.ca/api/specification/DeleteSpecification" + "?id=" + id)
+    return this._http.get<boolean>("https://eservices.mirajfoods.ca/api/specification/DeleteSpecification" + "?id=" + id)
 
   }
 
@@ -145,34 +145,34 @@ getspecification(itemid:number):Observable<itemspecification[]>{
 
   getCustomer():Observable<Customer[]>
 {
-   return this._http.get<Customer[]>("http://eservices.mirajfoods.ca/api/Customer/getcustomer")
+   return this._http.get<Customer[]>("https://eservices.mirajfoods.ca/api/Customer/getcustomer")
   .pipe(
     catchError(this.handleError)
 );
 }
 
 WaviedShippingCharges(model:Customer):Observable<string>{
-  return this._http.post<string>("http://eservices.mirajfoods.ca/api/Customer/WaviedShippingCharges",model);
+  return this._http.post<string>("https://eservices.mirajfoods.ca/api/Customer/WaviedShippingCharges",model);
 }
 
 
 getImagelist(itemid:number):Observable<itemimage[]>{
 
-  return this._http.get<itemimage[]>("http://eservices.mirajfoods.ca/api/AdminItemGallery/GetImageList?iID=" + itemid  );
+  return this._http.get<itemimage[]>("https://eservices.mirajfoods.ca/api/AdminItemGallery/GetImageList?iID=" + itemid  );
 
 
 }
 
 UploadImage(formdata:FormData):Observable<itemimage>{
 
-    return this._http.post<itemimage>("http://eservices.mirajfoods.ca/api/AdminItemGallery/UploadImage",formdata);
+    return this._http.post<itemimage>("https://eservices.mirajfoods.ca/api/AdminItemGallery/UploadImage",formdata);
 
 
 }
 
 deleteImage(id:number):Observable<boolean>{
 
-  return this._http.get<boolean>("http://eservices.mirajfoods.ca/api/AdminItemGallery/DeleteImage?id=" + id  );
+  return this._http.get<boolean>("https://eservices.mirajfoods.ca/api/AdminItemGallery/DeleteImage?id=" + id  );
 
 
 }
